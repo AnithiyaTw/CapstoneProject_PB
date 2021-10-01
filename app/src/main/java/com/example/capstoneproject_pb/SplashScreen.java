@@ -16,6 +16,7 @@ Thread timer;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+
         timer = new Thread(){
             @Override
             public void run(){
@@ -26,6 +27,7 @@ Thread timer;
                 } catch (InterruptedException e){
                     e.printStackTrace();
                 } finally {
+
                     Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(intent);
                     finish();
