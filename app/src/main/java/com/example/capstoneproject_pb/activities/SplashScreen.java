@@ -1,12 +1,11 @@
-package com.example.capstoneproject_pb;
+package com.example.capstoneproject_pb.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
 
-import com.airbnb.lottie.LottieAnimationView;
+import com.example.capstoneproject_pb.R;
 
 public class SplashScreen extends AppCompatActivity {
 
