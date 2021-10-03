@@ -1,5 +1,6 @@
 package com.example.capstoneproject_pb.adapter;
 
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,10 @@ import com.example.capstoneproject_pb.model.ModelMain;
 
 import java.util.List;
 
+
+
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
+
     private List<ModelMain> items;
     private MainAdapter.onSelectData onSelectData;
 
@@ -58,15 +62,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         public TextView tvMainData;
         public ImageView imgMainData;
 
-
         public ViewHolder(View itemView) {
             super(itemView);
-/*
             cvMainData = itemView.findViewById(R.id.cvMainData);
             tvMainData = itemView.findViewById(R.id.tvMainData);
             imgMainData = itemView.findViewById(R.id.imgMainData);
-
- */
         }
     }
 }
+

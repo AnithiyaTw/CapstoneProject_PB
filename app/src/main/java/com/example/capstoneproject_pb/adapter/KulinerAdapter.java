@@ -75,12 +75,12 @@ public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.ViewHold
 
         public ViewHolder(View itemView) {
             super(itemView);
-            /*
+
             cvKuliner = itemView.findViewById(R.id.cvKuliner);
             tvKuliner = itemView.findViewById(R.id.tvKuliner);
             tvKategori = itemView.findViewById(R.id.tvKategori);
             imgKuliner = itemView.findViewById(R.id.imgKuliner);
-            */
+
 
         }
     }

@@ -73,13 +73,13 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            /*
+
             cvWisata = itemView.findViewById(R.id.cvWisata);
             tvWisata = itemView.findViewById(R.id.tvWisata);
             tvKategori = itemView.findViewById(R.id.tvKategori);
             imgWisata = itemView.findViewById(R.id.imgWisata);
 
-             */
+
         }
     }
 }

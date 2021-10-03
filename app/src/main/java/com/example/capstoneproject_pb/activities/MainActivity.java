@@ -1,19 +1,20 @@
 package com.example.capstoneproject_pb.activities;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-import android.graphics.Color;
-import android.text.format.DateFormat;
 
 import com.example.capstoneproject_pb.R;
 import com.example.capstoneproject_pb.adapter.MainAdapter;
@@ -26,9 +27,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-
-public class MainActivity extends AppCompatActivity implements MainAdapter.onSelectData {
-
+public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvMainMenu;
     LayoutMarginDecoration gridMargin;
@@ -42,21 +41,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getWindow().getDecorView().setSystemUiVisibility
-                    (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        }
 
-        if (Build.VERSION.SDK_INT >= 21) {
-            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-/*
         tvToday = findViewById(R.id.tvDate);
         rvMainMenu = findViewById(R.id.rvMainMenu);
-*/
-
         GridLayoutManager mLayoutManager = new GridLayoutManager(this, 2,
                 RecyclerView.VERTICAL, false);
         rvMainMenu.setLayoutManager(mLayoutManager);
@@ -68,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         Date dateNow = Calendar.getInstance().getTime();
         hariIni = (String) DateFormat.format("EEEE", dateNow);
         getToday();
-        setMenu();
+        //setMenu();
     }
 
     private void getToday() {
@@ -78,56 +65,5 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         tvToday.setText(formatFix);
     }
 
-    private void setMenu() {
-        mdlMainMenu = new ModelMain("Hotel", R.drawable.ic_hotel);
-        lsMainMenu.add(mdlMainMenu);
-        mdlMainMenu = new ModelMain("Kuliner", R.drawable.ic_cafe);
-        lsMainMenu.add(mdlMainMenu);
-        mdlMainMenu = new ModelMain("Tempat Ibadah", R.drawable.ic_pray_place);
-        lsMainMenu.add(mdlMainMenu);
-        mdlMainMenu = new ModelMain("Wisata", R.drawable.ic_destination);
-        lsMainMenu.add(mdlMainMenu);
-        mdlMainMenu = new ModelMain("Komunitas", R.drawable.ic_komunitas);
-        lsMainMenu.add(mdlMainMenu);
-        mdlMainMenu = new ModelMain("Rute Angkot", R.drawable.ic_rute_angkot);
-        lsMainMenu.add(mdlMainMenu);
-
-        MainAdapter myAdapter = new MainAdapter(lsMainMenu, this);
-        rvMainMenu.setAdapter(myAdapter);
-
-    }
-
-    @Override
-    public void onSelected(ModelMain mdlMain) {
-        switch (mdlMain.getTxtName()) {
-            /*
-            case "Hotel":
-                startActivityForResult(new Intent(MainActivity.this, HotelActivity.class), 1);
-                break;
-            case "Kuliner":
-                startActivityForResult(new Intent(MainActivity.this, KulinerActivity.class), 1);
-                break;
-            case "Tempat Ibadah":
-                startActivityForResult(new Intent(MainActivity.this, PrayPlaceActivity.class), 1);
-                break;
-            case "Wisata":
-                startActivityForResult(new Intent(MainActivity.this, WisataActivity.class), 1);
-                break;
-                */
-
-        }
-    }
-
-    //set Transparent Status bar
-    public static void setWindowFlag(Activity activity, final int bits, boolean on) {
-
-        Window win = activity.getWindow();
-        WindowManager.LayoutParams winParams = win.getAttributes();
-        if (on) {
-            winParams.flags |= bits;
-        } else {
-            winParams.flags &= ~bits;
-        }
-        win.setAttributes(winParams);
-    }
 }
+
