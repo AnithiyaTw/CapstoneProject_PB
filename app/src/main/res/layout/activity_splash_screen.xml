@@ -22,10 +22,8 @@
     <ImageView
         android:id="@+id/img_text"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:src="@drawable/logo"
-        android:scaleX="0.8"
-        android:scaleY="0.8"
+        android:layout_height="280dp"
+        android:src="@drawable/logo1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.3"
