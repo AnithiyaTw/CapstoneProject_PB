@@ -1,11 +1,9 @@
-package com.example.capstoneproject_pb.activities;
+package com.example.capstoneproject_pb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.example.capstoneproject_pb.R;
 
 public class SplashScreen extends AppCompatActivity {
 
