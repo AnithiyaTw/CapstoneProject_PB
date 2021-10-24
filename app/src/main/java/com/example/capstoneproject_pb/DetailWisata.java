@@ -11,4 +11,10 @@ public class DetailWisata extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_wisata);
     }
+
+    private void getDetailWisata(){
+
+    }
+
+
 }
