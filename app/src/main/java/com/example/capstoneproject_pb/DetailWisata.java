@@ -15,6 +15,4 @@ public class DetailWisata extends AppCompatActivity {
     private void getDetailWisata(){
 
     }
-
-
 }
