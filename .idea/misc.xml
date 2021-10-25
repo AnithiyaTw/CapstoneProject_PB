@@ -3,11 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Angga Meigi/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_detail_wisata.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Angga Meigi/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_model_wisata.xml" value="0.1213768115942029" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/drawable/bg_circle_radius_primary.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_daftar_wisata.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_detail_kuliner.xml" value="0.1" />
-        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_detail_wisata.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_detail_wisata.xml" value="0.6" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_kuliner.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_main.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_splash_screen.xml" value="0.18931159420289856" />
@@ -18,6 +17,7 @@
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/item_list_kuliner.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/item_list_pray_place.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/item_list_wisata.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/list_wisata.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>
