@@ -83,7 +83,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Minggu 31 Oktober 2021"
+                    android:text="Minggu, 31 Oktober 2021"
                     android:textColor="#fff"
                     android:textSize="10dp" />
 
