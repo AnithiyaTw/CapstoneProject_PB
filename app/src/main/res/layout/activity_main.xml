@@ -199,8 +199,7 @@
             android:textColor="#fff"
             android:textSize="15dp"
             android:textStyle="italic"
-            android:onClick="AplikasiBy"
-            />
+            android:onClick="AplikasiBy" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
