@@ -1,3 +1,5 @@
 # CapstoneProject_PB
 [Tugas:Pemrograman Bergerak]
-Membuat aplikasi android sederhana
+Membuat aplikasi wisata android sederhana
+Nama Aplikasi : ExplorePurwakarta
+Nama Kelompok : Chocoding
