@@ -27,8 +27,6 @@ public class DaftarWisata extends AppCompatActivity {
     private static String JSON_URL = "https://dev.farizdotil.com/api/purwakarta/wisata";
     Adapter adapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
