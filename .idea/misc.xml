@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/drawable/bg_circle_radius_primary.xml" value="0.26666666666666666" />
-        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_daftar_wisata.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_daftar_wisata.xml" value="0.16723549488054607" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_detail_kuliner.xml" value="0.1" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_detail_wisata.xml" value="0.264" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/activity_kuliner.xml" value="0.27291666666666664" />
@@ -17,7 +17,8 @@
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/item_list_kuliner.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/item_list_pray_place.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/item_list_wisata.xml" value="0.27291666666666664" />
-        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/list_wisata.xml" value="0.4" />
+        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/list_wisata.xml" value="0.2" />
+        <entry key="..\:/Users/AnithiyaTW/AndroidStudioProjects/CapstoneProject_PB/app/src/main/res/layout/wisata_item.xml" value="0.22146739130434784" />
       </map>
     </option>
   </component>

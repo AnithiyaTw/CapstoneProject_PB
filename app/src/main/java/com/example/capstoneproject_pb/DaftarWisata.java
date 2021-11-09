@@ -1,76 +1,124 @@
 package com.example.capstoneproject_pb;
 
-import android.os.Bundle;
-import android.util.Log;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DaftarWisata extends AppCompatActivity {
-    RecyclerView recyclerView;
-    List<Wisata> wisataList;
-    private static String JSON_URL = "https://dev.farizdotil.com/api/purwakarta/wisata";
-    Adapter adapter;
+    public class DaftarWisata extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daftar_wisata);
+        private static String JSON_URL = "https://run.mocky.io/v3/34c40395-22cf-4f8c-a6cf-c81b9d342054";
 
-        recyclerView = findViewById(R.id.DaftarWisata);
-        wisataList = new ArrayList<>();
-        extractWisata();
+        List<WisataModelClass> wisataList;
+        RecyclerView recyclerView;
 
-    }
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_daftar_wisata);
 
-    private void extractWisata() {
-        RequestQueue Queue = Volley.newRequestQueue(this);
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, JSON_URL, null, new Response.Listener<JSONArray>() {
+            wisataList = new ArrayList<>();
+            recyclerView = findViewById(R.id.DaftarWisata);
+
+            GetData getData = new GetData();
+            getData.execute();
+        }
+
+        public void searchBooks(View view) {
+        }
+
+        public class GetData extends AsyncTask<String,String,String>{
+
+
             @Override
-            public void onResponse(JSONArray response) {
-                for (int i = 0; i < response.length(); i++) {
-                    try {
-                        JSONObject wisataObject = response.getJSONObject(i);
+            protected String doInBackground(String... strings) {
+                String current = "";
+                try{
+                    URL url;
+                    HttpURLConnection urlConnection = null;
+                    try{
+                        url = new URL(JSON_URL);
+                        urlConnection = (HttpURLConnection) url.openConnection();
 
-                        Wisata wisata = new Wisata();
-                        wisata.setNama(wisataObject.getString("nama").toString());
-                        wisata.setGambar_url(wisataObject.getString("ugambar_url"));
-                        wisata.setId(wisataObject.getInt("id"));
-                        wisata.setKategori(wisataObject.getString("kategori"));
+                        InputStream is = urlConnection.getInputStream();
+                        InputStreamReader isr = new InputStreamReader(is);
 
-                        wisataList.add(wisata);
+                        int data = isr.read();
+                        while(data != -1){
+                            current += (char) data;
+                            data = isr.read();
+                        }
+                        return current;
 
-                    } catch (JSONException e) {
+                    } catch (MalformedURLException e) {
                         e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        if(urlConnection != null){
+                            urlConnection.disconnect();
+                        }
                     }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                adapter = new Adapter(getApplicationContext(), wisataList);
-                recyclerView.setAdapter(adapter);
 
+
+                return current;
             }
-        }, new Response.ErrorListener() {
+
+
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("tag", "onErrorResponse: " + error.getMessage());
-            }
-        });
+            protected void onPostExecute(String s) {
+                try {
+                    JSONObject jsonObject = new JSONObject(s);
+                    JSONArray jsonArray = jsonObject.getJSONArray("wisata");
 
-        Queue.add(jsonArrayRequest);
+                    for (int i = 0 ; i< jsonArray.length(); i++){
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+
+                        WisataModelClass model = new WisataModelClass();
+                        model.setId(jsonObject1.getString("id"));
+                        model.setNama(jsonObject1.getString("nama"));
+                        model.setKategori(jsonObject1.getString("kategori"));
+                        model.setGambar(jsonObject1.getString("gambar_url"));
+
+                        wisataList.add(model);
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                PutDataIntoRecyclerView(wisataList);
+            }
+        }
+
+        private void PutDataIntoRecyclerView(List<WisataModelClass> wisataList){
+            WisataAdapter wisataAdapter = new WisataAdapter(this, wisataList);
+            LinearLayoutManager llm = new LinearLayoutManager(this);
+            llm.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(llm);
+            recyclerView.setAdapter( wisataAdapter );
+
+        }
+
     }
-}
