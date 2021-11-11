@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,17 +14,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHolder>{
 
+
+
     private  Context mContext;
     private  List<WisataModelClass> mData;
+    private static RecyclerViewClickListener listener;
 
-    public WisataAdapter(Context mContext, List<WisataModelClass> mData) {
+    public WisataAdapter(Context mContext, List<WisataModelClass> mData,RecyclerViewClickListener listener) {
         this.mContext = mContext;
         this.mData = mData;
+        this.listener =listener;
     }
+
 
     @NonNull
     @Override
@@ -53,7 +60,7 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
     }
 
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView id;
         TextView nama;
         TextView kategori;
@@ -66,8 +73,17 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
             nama = itemView.findViewById(R.id.nama_text);
             kategori = itemView.findViewById(R.id.kategori_text);
             gambar = itemView.findViewById(R.id.imageView);
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view,getAdapterPosition());
         }
     }
 
+
+    public interface RecyclerViewClickListener{
+        void onClick(View view,int position);
+    }
 }

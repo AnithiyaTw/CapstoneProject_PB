@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgrr"
-
-    tools:context=".detail_tentang_kota">
+    tools:context=".DetailTentangKota">
 
 
     <androidx.cardview.widget.CardView
