@@ -1,14 +1,11 @@
 package com.example.capstoneproject_pb;
 
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
-
 import androidx.appcompat.app.AppCompatActivity;
-
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -36,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     public void DaftarWisata(View view) {
         Intent intent = new Intent(MainActivity.this, DaftarWisata.class);
         startActivity(intent);
-      }
+    }
+    public void TentangKota(View view) {
+        startActivity(new Intent(MainActivity.this, DetailTentangKota.class));
+    }
 }
 

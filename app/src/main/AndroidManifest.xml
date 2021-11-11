@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.capstoneproject_pb">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -14,32 +14,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".SplashScreen"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailTentangKota"
+            android:exported="true" />
+        <activity
+            android:name=".DetailWisata"
+            android:exported="true">
         </activity>
 
         <activity
             android:name=".DaftarWisata"
-            android:exported="true">
+            android:exported="true"
+            android:usesCleartextTraffic="true">
         </activity>
-  
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
         </activity>
-
-        <activity
-            android:name=".detail_tentang_kota"
-            android:exported="true">
-        </activity>
-
     </application>
-
 
 </manifest>

@@ -63,20 +63,18 @@
         android:layout_width="match_parent"
         android:layout_height="185dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
         android:src="@drawable/logostroke"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="215dp"
 
 
         android:layout_marginStart="12dp"
@@ -127,9 +125,10 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="18dp"
+                    android:onClick="DaftarWisata"
                     app:lottie_autoPlay="true"
                     app:lottie_rawRes="@raw/areamap"
-                    android:onClick="DaftarWisata"/>
+                    tools:ignore="SpeakableTextPresentCheck" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -172,6 +171,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="30dp"
+                    android:onClick="TentangKota"
                     app:lottie_autoPlay="true"
                     app:lottie_rawRes="@raw/info" />
 
@@ -193,13 +193,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="AplikasiBy"
             android:text="Aplikasi by : CHOCODING"
             android:textAlignment="center"
-            android:clickable="true"
             android:textColor="#fff"
             android:textSize="15dp"
             android:textStyle="italic"
-            android:onClick="AplikasiBy" />
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
