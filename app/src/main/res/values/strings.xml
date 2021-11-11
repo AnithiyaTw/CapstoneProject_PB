@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ExplorePurwakarta</string>
     <string name="by">-Anithiya Tw\n -Anisa G\n -Tria Ws\n -Reza Rk</string>
+
+    <string name="Text">Kabupaten Purwakarta merupakan bagian dari Wil. Propinsi Jawa Barat yang terletak diantara 107o30 - 107o40 BT dan 6o25 - 6o45 LS. Secara administratif, Kab. Purwakarta mempunyai batas wilayah sebagai berikut: a. Bagian Barat dan sebagian wilayah Utara berbatasan dengan Kab. Karawang b. Bagian Utara dan sebagian wilayah bagian Timur berbatasan dengan Kab. Subang c. Bagian Selatan berbatasan dengan Kab. Bandung d. Bagian Barat Daya berbatasan dengan Kab. Cianjur
+Kabupaten Purwakarta berada pada titik-temu tiga jalur utama lalu-lintas yang sangat strategis, yaitu jalur Purwakarta-Jakarta, Purwakarta-Bandung dan Purwakarta-Cirebon yang merupakan jalur utama ke wilayah Jawa Tengah.
+Luas wilayah Kab. Purwakarta tercatat 971,72 km2 atau sekitar 2,81 persen dari luas wilayah Prop. Jawa Barat. Sejak Januari 2001, Kab. Purwakarta mempunyai 17 kecamatan dengan 192 desa/kelurahan (183 desa dan 9 kelurahan). Jarak antara Kecamatan bervariasi, dimana jarak terdekat sepanjang 4 km terdapat anatara Kec. Sukatani dengan Kec. Plered. Sementara jarak terjauh adalah 60 km yang terdapat antara kecamatan Bojong dengan Kecamatan Sukasari.</string>
+    <string name="nama_kota">Kota Purwakarta</string>
 </resources>
