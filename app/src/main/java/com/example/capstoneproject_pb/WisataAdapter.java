@@ -64,6 +64,7 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
         TextView id;
         TextView nama;
         TextView kategori;
+        TextView deskripsi;
         ImageView gambar;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -72,6 +73,7 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
             id = itemView.findViewById(R.id.id_text);
             nama = itemView.findViewById(R.id.nama_text);
             kategori = itemView.findViewById(R.id.kategori_text);
+            deskripsi = itemView.findViewById(R.id.deskripsi_text);
             gambar = itemView.findViewById(R.id.imageView);
             itemView.setOnClickListener(this);
         }

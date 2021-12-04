@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class DaftarWisata extends AppCompatActivity {
-    private static final String JSON_URL = "https://run.mocky.io/v3/34c40395-22cf-4f8c-a6cf-c81b9d342054";
+    private static final String JSON_URL = "https://run.mocky.io/v3/95ab07a8-0c51-4b8e-a82c-10b11a470f6a";
     private WisataAdapter.RecyclerViewClickListener listener;
     List<WisataModelClass> wisataList;
     RecyclerView recyclerView;
@@ -106,6 +106,7 @@ public class DaftarWisata extends AppCompatActivity {
                     model.setId(jsonObject1.getString("id"));
                     model.setNama(jsonObject1.getString("nama"));
                     model.setKategori(jsonObject1.getString("kategori"));
+                    model.setDeskripsi(jsonObject1.getString("deskripsi"));
                     model.setGambar(jsonObject1.getString("gambar_url"));
 
                     wisataList.add(model);
@@ -137,6 +138,7 @@ public class DaftarWisata extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),DetailWisata.class);
                 intent.putExtra("nama",wisataList.get(position).getNama());
                 intent.putExtra("kategori", wisataList.get(position).getKategori());
+                intent.putExtra("deskripsi", wisataList.get(position).getDeskripsi());
                 intent.putExtra("gambar_url", wisataList.get(position).getGambar());
                 startActivity(intent);
             }

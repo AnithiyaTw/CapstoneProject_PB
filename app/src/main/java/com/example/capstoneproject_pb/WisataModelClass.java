@@ -4,13 +4,15 @@ public class WisataModelClass {
     String id;
     String nama;
     String kategori;
+    String deskripsi;
     String gambar;
 
 
-    public WisataModelClass(String id, String nama, String kategori,String gambar) {
+    public WisataModelClass(String id, String nama, String kategori, String deskripsi,String gambar) {
         this.id = id;
         this.nama = nama;
         this.kategori = kategori;
+        this.deskripsi = deskripsi;
         this.gambar = gambar;
     }
 
@@ -42,6 +44,13 @@ public class WisataModelClass {
 
     public void setKategori(String kategori) {
         this.kategori = kategori;
+    }
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 
 

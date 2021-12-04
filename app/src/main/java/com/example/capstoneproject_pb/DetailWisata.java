@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 public class DetailWisata extends AppCompatActivity {
 
     @Override
@@ -17,13 +19,14 @@ public class DetailWisata extends AppCompatActivity {
 
         TextView namaTxt = findViewById(R.id.textViewNama);
         TextView kategoriTxt = findViewById(R.id.kategori_text);
-        TextView deskripsiTxt = findViewById(R.id.deskripsi);
+        TextView deskripsiTxt = findViewById(R.id.deskripsi_text);
         ImageView gambarView = findViewById(R.id.imageView);
 
 
         String nama = "nama not set";
         String kategori = "kategori not set";
         String deskripsi = "deskripsi not set";
+        String gambar = "gambar not set";
 
 
 
@@ -32,14 +35,13 @@ public class DetailWisata extends AppCompatActivity {
             nama = extras.getString("nama");
             kategori = extras.getString("kategori");
             deskripsi = extras.getString("deskripsi");
+            gambar = extras.getString("gambar_url");
         }
 
         namaTxt.setText(nama);
         kategoriTxt.setText(kategori);
         deskripsiTxt.setText(deskripsi);
-        gambarView.findViewById(R.id.imageView);
-
-
+        Glide.with(gambarView).load(gambar).into(gambarView);
 
     }
 }
