@@ -2,6 +2,7 @@ package com.example.capstoneproject_pb;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,16 +20,13 @@ import java.util.List;
 
 public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHolder>{
 
-
-
     private  Context mContext;
-    private  List<WisataModelClass> mData;
-    private static RecyclerViewClickListener listener;
+    /*private  List<WisataModelClass> mData;*/
+    private ArrayList<WisataModelClass> mData;
 
-    public WisataAdapter(Context mContext, List<WisataModelClass> mData,RecyclerViewClickListener listener) {
+    public WisataAdapter(Context mContext , ArrayList<WisataModelClass> wisataModelClassArrayList) {
         this.mContext = mContext;
-        this.mData = mData;
-        this.listener =listener;
+        this.mData= wisataModelClassArrayList;
     }
 
 
@@ -43,7 +41,7 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
     }
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+    int posisi = position;
         holder.id.setText(mData.get(position).getId());
         holder.nama.setText(mData.get(position).getNama());
         holder.kategori.setText(mData.get(position).getKategori());
@@ -51,7 +49,17 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
         //glide
         Glide.with(mContext)
                 .load(mData.get(position).getGambar()).into(holder.gambar);
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext,DetailWisata.class);
+                intent.putExtra("nama",mData.get(posisi).getNama());
+                intent.putExtra("kategori", mData.get(posisi).getKategori());
+                intent.putExtra("deskripsi", mData.get(posisi).getDeskripsi());
+                intent.putExtra("gambar_url", mData.get(posisi).getGambar());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -59,8 +67,7 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
         return mData.size();
     }
 
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView id;
         TextView nama;
         TextView kategori;
@@ -75,17 +82,6 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
             kategori = itemView.findViewById(R.id.kategori_text);
             deskripsi = itemView.findViewById(R.id.deskripsi_text);
             gambar = itemView.findViewById(R.id.imageView);
-            itemView.setOnClickListener(this);
         }
-
-        @Override
-        public void onClick(View view) {
-            listener.onClick(view,getAdapterPosition());
-        }
-    }
-
-
-    public interface RecyclerViewClickListener{
-        void onClick(View view,int position);
     }
 }
