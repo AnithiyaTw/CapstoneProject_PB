@@ -25,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,12 +51,15 @@ public class DaftarWisata extends AppCompatActivity {
     
     SearchView searchView;
 
+    ShimmerFrameLayout shimmerFrameLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_wisata);
-        
+        shimmerFrameLayout= findViewById(R.id.shimmer);
+        shimmerFrameLayout.startShimmer();
         searchView = findViewById(R.id.search_view);
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -93,6 +97,9 @@ public class DaftarWisata extends AppCompatActivity {
             public void onResponse(JSONArray response) {
                 for (int i = 0; i < response.length(); i++) {
                     try {
+                        shimmerFrameLayout.stopShimmer();
+                        shimmerFrameLayout.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                         JSONObject responseObj = response.getJSONObject(i);
                         String wisataId = responseObj.getString("id");
                         String wisataNama = responseObj.getString("nama");
@@ -156,119 +163,6 @@ public class DaftarWisata extends AppCompatActivity {
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(wisataAdapter);
     }
-
-
-
-
-    /*private void filter(String newText) {
-        List<WisataModelClass> filteredList = new ArrayList<>();
-        for (WisataModelClass item : wisataList){
-            if (item.getNama().toLowerCase().contains(newText.toLowerCase())){
-                filteredList.add(item);
-            }
-            else if (item.getKategori().toLowerCase().contains(newText.toLowerCase())){
-                filteredList.add(item);
-            }
-        }
-        wisataAdapter.filterList(filteredList);
-    }
-
-
-    public class GetData extends AsyncTask<String,String,String>{
-
-        @Override
-        protected String doInBackground(String... strings) {
-            String current = "";
-            try{
-                URL url;
-                HttpURLConnection urlConnection = null;
-                try{
-                    url = new URL(JSON_URL);
-                    urlConnection = (HttpURLConnection) url.openConnection();
-
-                    InputStream is = urlConnection.getInputStream();
-                    InputStreamReader isr = new InputStreamReader(is);
-
-                    int data = isr.read();
-                    while(data != -1){
-                        current += (char) data;
-                        data = isr.read();
-                    }
-                    return current;
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } finally {
-                    if(urlConnection != null){
-                        urlConnection.disconnect();
-                    }
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-
-            return current;
-        }
-
-
-        @Override
-        protected void onPostExecute(String s) {
-            try {
-                JSONObject jsonObject = new JSONObject(s);
-                JSONArray jsonArray = jsonObject.getJSONArray("0");
-                JSONArray jsonArray2 = jsonArray.getJSONArray(0);
-
-                Log.d(TAG, "onPostExecute: " + jsonArray);
-
-                for (int i = 0 ; i<jsonArray2.length(); i++){
-                    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-
-                    WisataModelClass model = new WisataModelClass();
-                    model.setId(jsonObject1.getString("id"));
-                    model.setNama(jsonObject1.getString("nama"));
-                    model.setKategori(jsonObject1.getString("kategori"));
-                    model.setDeskripsi(jsonObject1.getString("deskripsi"));
-                    model.setGambar(jsonObject1.getString("gambar_url"));
-
-                    wisataList.add(model);
-                }
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            PutDataIntoRecyclerView(wisataList);
-        }
-    }
-
-    private void PutDataIntoRecyclerView(List<WisataModelClass> wisataList){
-        setOnClickListener();
-        WisataAdapter wisataAdapter = new WisataAdapter(this, wisataList,listener);
-        recyclerView = findViewById(R.id.recyclerView);
-        RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter( wisataAdapter );
-
-    }
-
-    private void setOnClickListener() {
-        listener = new WisataAdapter.RecyclerViewClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                Intent intent = new Intent(getApplicationContext(),DetailWisata.class);
-                intent.putExtra("nama",wisataList.get(position).getNama());
-                intent.putExtra("kategori", wisataList.get(position).getKategori());
-                intent.putExtra("deskripsi", wisataList.get(position).getDeskripsi());
-                intent.putExtra("gambar_url", wisataList.get(position).getGambar());
-                startActivity(intent);
-            }
-        };
-    }*/
 
 
 }
