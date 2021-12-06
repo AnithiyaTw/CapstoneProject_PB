@@ -44,6 +44,7 @@ dependencies {
     // Skip this if you don't want to use integration libraries or configure Glide.
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation "com.android.volley:volley:1.1.1"
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
 
 
