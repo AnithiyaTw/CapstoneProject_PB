@@ -90,7 +90,7 @@ public class DaftarWisata extends AppCompatActivity {
     }
 
     private void getData(){
-        String JSON_URL = "https://61ac6ee5264ec200176d448d.mockapi.io/api/wisata";
+        String JSON_URL = "https://61ac75cf264ec200176d44a0.mockapi.io/api/wisata";
         RequestQueue queue = Volley.newRequestQueue(DaftarWisata.this);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, JSON_URL, null, new Response.Listener<JSONArray>() {
             @Override
@@ -125,7 +125,7 @@ public class DaftarWisata extends AppCompatActivity {
 
 
     private void getDataSearch(String newtext){
-        String urlSearch= "https://61ac6ee5264ec200176d448d.mockapi.io/api/wisata?search="+newtext;
+        String urlSearch= "https://61ac75cf264ec200176d44a0.mockapi.io/api/wisata?search="+newtext;
         Log.d(TAG, "getDataSearch: " + urlSearch);
         RequestQueue queue = Volley.newRequestQueue(DaftarWisata.this);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlSearch, null, new Response.Listener<JSONArray>() {
