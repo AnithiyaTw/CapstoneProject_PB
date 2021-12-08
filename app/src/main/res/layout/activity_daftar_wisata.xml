@@ -8,6 +8,19 @@
     android:background="@drawable/bckgr_white"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/favbtn"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginRight="82dp"
+        android:text="favourite list"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:background="@color/logocolor2"/>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view"
@@ -56,6 +69,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="gone"
+        android:layout_below="@+id/favbtn"
         app:layout_constraintTop_toBottomOf="@+id/search_view" />
 
 </LinearLayout>

@@ -8,10 +8,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name=".DarkMode"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -24,22 +25,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".FavoriteActivity"
+            android:configChanges="uiMode"
+            android:exported="true" />
+
         <activity
             android:name=".DetailTentangKota"
+            android:configChanges="uiMode"
             android:exported="true" />
         <activity
             android:name=".DetailWisata"
+            android:configChanges="uiMode"
             android:exported="true">
         </activity>
 
         <activity
             android:name=".DaftarWisata"
+            android:configChanges="uiMode"
             android:exported="true"
             android:usesCleartextTraffic="true">
         </activity>
 
         <activity
             android:name=".MainActivity"
+            android:configChanges="uiMode"
             android:exported="true">
         </activity>
     </application>
