@@ -18,7 +18,6 @@ public class FavoriteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite);
         rv=findViewById(R.id.recyclerView);
-        rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         getFavData();
