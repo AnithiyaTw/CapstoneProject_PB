@@ -3,12 +3,16 @@ package com.example.capstoneproject_pb;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 
@@ -18,7 +22,39 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //DarkMode
+        if (DarkMode.getInstance().isNightModeEnabled()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
         setContentView(R.layout.activity_main);
+
+        //SwitchDarkmode
+        Switch enableDark = findViewById(R.id.switchDark);
+        enableDark.setChecked(false);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+            enableDark.setChecked(true);
+
+        enableDark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    DarkMode.getInstance().setIsNightModeEnabled(true);
+                    Intent intent = getIntent();
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    finish();
+                    startActivity(intent);
+                } else {
+                    DarkMode.getInstance().setIsNightModeEnabled(false);
+                    Intent intent = getIntent();
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    finish();
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
 
@@ -38,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void TentangKota(View view) {
-        startActivity(new Intent(MainActivity.this, DetailTentangKota.class));
+      Intent intent = new Intent(MainActivity.this, DetailTentangKota.class);
+      startActivity(intent);
     }
 
 

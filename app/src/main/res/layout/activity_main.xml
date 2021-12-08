@@ -7,6 +7,31 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="@color/shimmer_color"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <Switch
+            android:id="@+id/switchDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_bg"
+            android:paddingLeft="24dp"
+            android:paddingTop="4dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="4dp"
+            android:text="Dark Mode "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:ignore="UnusedAttribute,TouchTargetSizeCheck" />
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -173,7 +198,8 @@
                     android:layout_marginBottom="30dp"
                     android:onClick="TentangKota"
                     app:lottie_autoPlay="true"
-                    app:lottie_rawRes="@raw/info" />
+                    app:lottie_rawRes="@raw/info"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -181,7 +207,9 @@
 
     </LinearLayout>
 
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -189,6 +217,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
 
         <TextView
             android:layout_width="match_parent"

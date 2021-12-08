@@ -8,10 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#ff42b549</color>
-    <color name="colorPrimaryDark">#ff42b549</color>
-    <color name="colorAccent">#FBC02D</color>
-
     <color name="logocolor1">#ff8619</color>
     <color name="logocolor2">#4ba7ff</color>
     <color name="grey">#B3B3B3</color>
